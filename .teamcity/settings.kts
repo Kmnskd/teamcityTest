@@ -63,7 +63,7 @@ object Build : BuildType({
                 email = "kun.kun-li@ubisoft.com"
             }
             buildStarted = true
-            buildFinishedSuccessfully = true
+//            buildFinishedSuccessfully = true
         }
     }
 })
