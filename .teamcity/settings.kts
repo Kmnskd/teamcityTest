@@ -27,7 +27,8 @@ To debug in IntelliJ Idea, open the 'Maven Projects' tool window (View
 'Debug' option is available in the context menu for the task.
 */
 
-version = "2024.03"
+//version = "2024.03"
+version = "2023.11"
 
 project {
 
@@ -61,8 +62,7 @@ object Build : BuildType({
     features {
         notifications {
             notifierSettings = emailNotifier {
-//                email = "kun.kun-li@ubisoft.com"
-                email = "kmnskdlikun@163.com"
+                email = "kun.kun-li@ubisoft.com"
             }
             buildStarted = true
             buildFinishedSuccessfully = true
