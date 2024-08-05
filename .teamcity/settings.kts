@@ -58,7 +58,12 @@ object Build : BuildType({
     }
 
     features {
-        perfmon {
+        notifications {
+            notifierSettings = emailNotifier {
+                email = "kun.kun-li@ubisoft.com"
+            }
+            buildStarted = true
+            buildFinishedSuccessfully = true
         }
     }
 })
