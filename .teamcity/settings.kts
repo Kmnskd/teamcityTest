@@ -58,12 +58,19 @@ object Build : BuildType({
     }
 
     features {
+//        notifications {
+//            notifierSettings = emailNotifier {
+//                email = "kun.kun-li@ubisoft.com"
+//            }
+//            buildStarted = true
+////            buildFinishedSuccessfully = true
+//        }
         notifications {
             notifierSettings = emailNotifier {
                 email = "kun.kun-li@ubisoft.com"
             }
+
             buildStarted = true
-//            buildFinishedSuccessfully = true
         }
     }
 })
