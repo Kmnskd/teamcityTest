@@ -1,4 +1,5 @@
 import jetbrains.buildServer.configs.kotlin.*
+import jetbrains.buildServer.configs.kotlin.buildFeatures.notifications
 import jetbrains.buildServer.configs.kotlin.buildFeatures.perfmon
 import jetbrains.buildServer.configs.kotlin.buildSteps.script
 import jetbrains.buildServer.configs.kotlin.triggers.vcs
@@ -36,7 +37,7 @@ project {
 }
 
 object Build : BuildType({
-    name = "Build"
+    name = "BuildStep"
 
     vcs {
         root(HttpsGithubComMarcobehlerjetbrainsBuildpipelinesGitRefsHeadsMain)
@@ -58,25 +59,18 @@ object Build : BuildType({
     }
 
     features {
-//        notifications {
-//            notifierSettings = emailNotifier {
-//                email = "kun.kun-li@ubisoft.com"
-//            }
-//            buildStarted = true
-////            buildFinishedSuccessfully = true
-//        }
         notifications {
             notifierSettings = emailNotifier {
                 email = "kun.kun-li@ubisoft.com"
             }
-
             buildStarted = true
+            buildFinishedSuccessfully = true
         }
     }
 })
 
 object HttpsGithubComMarcobehlerjetbrainsBuildpipelinesGitRefsHeadsMain : GitVcsRoot({
-    name = "https://github.com/marcobehlerjetbrains/buildpipelines.git#refs/heads/main"
+    name = "buildpipelines"
     url = "https://github.com/marcobehlerjetbrains/buildpipelines.git"
     branch = "refs/heads/main"
     branchSpec = "refs/heads/*"
