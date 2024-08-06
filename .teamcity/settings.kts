@@ -65,10 +65,10 @@ object Build : BuildType({
 
     features {
         notifications {
-//            notifierSettings = emailNotifier {
-////                email = "kun.kun-li@ubisoft.com"
-//                email = "kmnskdlikun@163.com"
-//            }
+            notifierSettings = emailNotifier {
+//                email = "kun.kun-li@ubisoft.com"
+                email = "kmnskdlikun@163.com"
+            }
 
             buildStarted = true
             buildFinishedSuccessfully = true
