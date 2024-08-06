@@ -66,12 +66,12 @@ object Build : BuildType({
     features {
         notifications {
             notifierSettings = emailNotifier {
-                email = "kun.kun-li@ubisoft.com"
+                email = "kun.kun-li@ubisoft.com,kmnskdlikun@163.com"
 //                email = "env.NOTARIZE_MAC_BUILD_DIR"
 //                email = "kmnskdlikun@163.com"
             }
 
-            buildStarted = true
+//            buildStarted = true
             buildFinishedSuccessfully = true
             buildFailed = true
         }
