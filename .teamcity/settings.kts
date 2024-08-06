@@ -53,7 +53,7 @@ object Build : BuildType({
             scriptContent = """
                 cd calculator-service
                 mvn clean package
-                echo "##teamcity[message text='<message text>' errorDetails='<error details>' status='<status value>']"
+                env
             """.trimIndent()
         }
     }
