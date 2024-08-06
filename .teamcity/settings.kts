@@ -62,11 +62,11 @@ object Build : BuildType({
     triggers {
         schedule {
             schedulingPolicy = cron {
-                minutes = "36"
+                minutes = "24"
                 hours = "16"
-                timezone = "Asia/Shanghai"
+                timezone = "Asia/Chongqing"
             }
-//            triggerBuild = always()
+            triggerBuild = always()
         }
     }
 
