@@ -6,7 +6,6 @@ import jetbrains.buildServer.configs.kotlin.triggers.vcs
 import jetbrains.buildServer.configs.kotlin.vcs.GitVcsRoot
 import jetbrains.buildServer.configs.kotlin.vcs.PerforceVcsRoot
 
-import vcs.*
 
 /*
 The settings script is an entry point for defining a TeamCity
@@ -34,9 +33,9 @@ To debug in IntelliJ Idea, open the 'Maven Projects' tool window (View
 version = "2023.11"
 
 project {
-
     vcsRoot(GithubMain)
     buildType(Build)
+    buildType(HelloWorld)
 }
 
 object Build : BuildType({
@@ -74,3 +73,16 @@ object Build : BuildType({
     }
 })
 
+object HelloWorld: BuildType({
+    name = "HelloWorld"
+    steps {
+        script { scriptContent = "echo HelloWorld" }
+    }
+})
+
+object GithubMain: GitVcsRoot({
+    name = "buildpipelines"
+    url = "https://github.com/marcobehlerjetbrains/buildpipelines.git"
+    branch = "refs/heads/main"
+    branchSpec = "refs/heads/*"
+})
