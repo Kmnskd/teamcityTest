@@ -53,6 +53,7 @@ object Build : BuildType({
             scriptContent = """
                 cd calculator-service
                 mvn clean package
+                echo "##teamcity[message text='<message text>' errorDetails='<error details>' status='<status value>']"
             """.trimIndent()
         }
     }
@@ -68,6 +69,7 @@ object Build : BuildType({
 ////                email = "kun.kun-li@ubisoft.com"
 //                email = "kmnskdlikun@163.com"
 //            }
+
             buildStarted = true
             buildFinishedSuccessfully = true
             buildFailed = true
