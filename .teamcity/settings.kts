@@ -5,6 +5,8 @@ import jetbrains.buildServer.configs.kotlin.buildSteps.script
 import jetbrains.buildServer.configs.kotlin.triggers.vcs
 import jetbrains.buildServer.configs.kotlin.vcs.GitVcsRoot
 import jetbrains.buildServer.configs.kotlin.vcs.PerforceVcsRoot
+import vcs.HelloWorld
+import vcs.GitMain
 
 
 /*
@@ -33,7 +35,7 @@ To debug in IntelliJ Idea, open the 'Maven Projects' tool window (View
 version = "2023.11"
 
 project {
-    vcsRoot(GithubMain)
+    vcsRoot(GitMain)
     buildType(Build)
     buildType(HelloWorld)
 }
@@ -42,7 +44,7 @@ object Build : BuildType({
     name = "BuildStep"
 
     vcs {
-        root(GithubMain)
+        root(GitMain)
     }
 
     steps {
@@ -62,10 +64,10 @@ object Build : BuildType({
 
     features {
         notifications {
-            notifierSettings = emailNotifier {
-//                email = "kun.kun-li@ubisoft.com"
-                email = "kmnskdlikun@163.com"
-            }
+//            notifierSettings = emailNotifier {
+////                email = "kun.kun-li@ubisoft.com"
+//                email = "kmnskdlikun@163.com"
+//            }
             buildStarted = true
             buildFinishedSuccessfully = true
             buildFailed = true
@@ -73,16 +75,16 @@ object Build : BuildType({
     }
 })
 
-object HelloWorld: BuildType({
-    name = "HelloWorld"
-    steps {
-        script { scriptContent = "echo HelloWorld" }
-    }
-})
+//object HelloWorld: BuildType({
+//    name = "HelloWorld"
+//    steps {
+//        script { scriptContent = "echo HelloWorld" }
+//    }
+//})
 
-object GithubMain: GitVcsRoot({
-    name = "buildpipelines"
-    url = "https://github.com/marcobehlerjetbrains/buildpipelines.git"
-    branch = "refs/heads/main"
-    branchSpec = "refs/heads/*"
-})
+//object GithubMain: GitVcsRoot({
+//    name = "buildpipelines"
+//    url = "https://github.com/marcobehlerjetbrains/buildpipelines.git"
+//    branch = "refs/heads/main"
+//    branchSpec = "refs/heads/*"
+//})
