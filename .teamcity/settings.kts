@@ -63,7 +63,7 @@ object Build : BuildType({
         schedule {
             schedulingPolicy = cron {
                 seconds = "0"
-                minutes = "14"
+                minutes = "18"
                 hours = "16"
                 timezone = "Asia/Shanghai"
             }
