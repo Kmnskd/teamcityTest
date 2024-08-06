@@ -2,6 +2,7 @@ import jetbrains.buildServer.configs.kotlin.*
 import jetbrains.buildServer.configs.kotlin.buildFeatures.notifications
 import jetbrains.buildServer.configs.kotlin.buildFeatures.perfmon
 import jetbrains.buildServer.configs.kotlin.buildSteps.script
+import jetbrains.buildServer.configs.kotlin.triggers.schedule
 import jetbrains.buildServer.configs.kotlin.triggers.vcs
 import jetbrains.buildServer.configs.kotlin.vcs.GitVcsRoot
 import jetbrains.buildServer.configs.kotlin.vcs.PerforceVcsRoot
@@ -59,7 +60,13 @@ object Build : BuildType({
     }
 
     triggers {
-        vcs {
+        schedule {
+            schedulingPolicy = cron {
+                seconds = "0"
+                minutes = "14"
+                hours = "16"
+                timezone = "Asia/Shanghai"
+            }
         }
     }
 
