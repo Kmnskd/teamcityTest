@@ -77,8 +77,8 @@ object Build : BuildType({
             notifierSettings = emailNotifier {
 //                email = "kun.kun-li@ubisoft.com\n" +
 //                        "kmnskdlikun@163.com"
-                email = "%teamcity.user.email%"
-//                email = "kmnskdlikun@163.com"
+//                email = "%teamcity.user.email%"
+                email = "kmnskdlikun@163.com"
             }
 
 //            buildStarted = true
