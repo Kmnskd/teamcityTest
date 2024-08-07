@@ -52,9 +52,10 @@ object Build : BuildType({
         script {
             id = "simpleRunner"
             scriptContent = """
-                echo %teamcity.user.email%
+                #echo %teamcity.user.email%
+                curl -u "%system.teamcity.auth.userId%:%system.teamcity.auth.password%" "%teamcity.serverUrl%/httpAuth/app/rest/builds/id:%teamcity.build.id%"
                 cd calculator-service
-                mvn clean package
+                #mvn clean package
             """.trimIndent()
         }
     }
