@@ -53,7 +53,7 @@ object Build : BuildType({
             id = "simpleRunner"
             scriptContent = """
                 
-                curl -u "%system.teamcity.auth.userId%:%system.teamcity.auth.password%" "%teamcity.serverUrl%/httpAuth/app/rest/builds/id:%teamcity.build.id%"
+                curl -u "%system.teamcity.auth.userId%:%system.teamcity.auth.password%" "%teamcity.serverUrl%/app/rest/users/username:%teamcity.build.triggeredBy.username%
                 cd calculator-service
                
             """.trimIndent()
