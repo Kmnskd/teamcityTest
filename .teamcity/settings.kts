@@ -52,8 +52,7 @@ object Build : BuildType({
         script {
             id = "simpleRunner"
             scriptContent = """
-                curl --header "Accept: application/json" --header "Authorization: Bearer eyJ0eXAiOiAiVENWMiJ9.ai1DeVlHMEd6eUhwMXgtYXo5ZFBLeUZwNlNZ.Njc0ZjZmN
-                WMtYzQ4Mi00ODZjLWExNDMtODY2MWJlOTk2ZGMw" "%teamcity.serverUrl%/app/rest/users/username:%teamcity.build.triggeredBy.username%
+                curl --header "Accept: application/json" --header "Authorization: Bearer eyJ0eXAiOiAiVENWMiJ9.ai1DeVlHMEd6eUhwMXgtYXo5ZFBLeUZwNlNZ.Njc0ZjZmNWMtYzQ4Mi00ODZjLWExNDMtODY2MWJlOTk2ZGMw" "%teamcity.serverUrl%/app/rest/users/username:%teamcity.build.triggeredBy.username%
                 cd calculator-service
                
             """.trimIndent()
