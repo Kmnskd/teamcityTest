@@ -52,9 +52,9 @@ object Build : BuildType({
         script {
             id = "simpleRunner"
             scriptContent = """
+                echo %teamcity.user.email%
                 cd calculator-service
                 mvn clean package
-                env
             """.trimIndent()
         }
     }
@@ -74,9 +74,9 @@ object Build : BuildType({
     features {
         notifications {
             notifierSettings = emailNotifier {
-                email = "kun.kun-li@ubisoft.com\n" +
-                        "kmnskdlikun@163.com"
-//                email = "env.NOTARIZE_MAC_BUILD_DIR"
+//                email = "kun.kun-li@ubisoft.com\n" +
+//                        "kmnskdlikun@163.com"
+                email = "%teamcity.user.email%"
 //                email = "kmnskdlikun@163.com"
             }
 
